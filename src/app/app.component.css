@@ -1,0 +1,19 @@
+.app-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 60px 1fr/ 60px 1fr;
+  grid-template-areas: 'side-menu header' 'side-menu main-container';
+}
+
+.header {
+  grid-area: header;
+}
+
+.side-menu {
+  grid-area: side-menu;
+}
+
+.main-container{
+    grid-area: main-container;
+}
