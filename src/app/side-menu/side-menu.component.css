@@ -81,3 +81,43 @@ a:last-child {
 .active.setting>i {
   color: mediumaquamarine;
 }
+
+@media screen and (max-width:600px) {
+  .lettermark>h1 {
+    font-size: 15px;
+  }
+  a {
+    font-size: 15px;
+    padding: 3px;
+    line-height: 60px;
+    height: 60px;
+  }
+  a> i{
+    padding:5px;
+  }
+  .side-menu {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+  }
+  .active.home {
+    border: none;
+    border-bottom: 3px solid tomato;
+  }
+  .active.inbox {
+    border: none;
+    border-bottom: 3px solid orange;
+  }
+  .active.stats {
+    border: none;
+    border-bottom: 3px solid dodgerblue;
+  }
+  .active.menu {
+    border: none;
+    border-bottom: 3px solid slateblue;
+  }
+  .active.setting {
+    border: none;
+    border-bottom: 3px solid mediumaquamarine;
+  }
+}

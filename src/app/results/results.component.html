@@ -10,12 +10,12 @@
   <div class="list-container">
     <table>
       <tr class="table-header">
-        <th *ngIf="countryCode" (click)='sort(1)'>Country Code</th>
-        <th *ngIf="countryName" (click)='sort(2)'>Country Name</th>
-        <th *ngIf="capital" (click)='sort(3)'>Capital</th>
+        <th *ngIf="countryCode">Country Code</th>
+        <th *ngIf="countryName">Country Name</th>
+        <th *ngIf="capital">Capital</th>
         <th *ngIf="language">Languages</th>
       </tr>
-      <tr *ngFor='let data of countries'>
+      <tr *ngFor='let data of countries.slice(start,end)'>
         <td *ngIf="countryCode">{{data.code}}</td>
         <td *ngIf="countryName">{{data.name }}</td>
         <td *ngIf="capital">{{data.capital}}</td>
@@ -26,5 +26,15 @@
         </td>
       </tr>
     </table>
+    <div class='no-content-error' *ngIf="showErrorMsg">
+      <p>Sorry no results to show.</p>
+    </div>
+    <div class='no-content-error' *ngIf="showServerErrorMsg">
+      <p>Server Error, Unable To Fetch Any Data.</p>
+    </div>
+    <div class="pagination">
+      <span *ngFor='let a of fakeArray, let i=index' (click)='onPage(i+1, $event)' #page>{{i+1}}</span>
+    </div>
   </div>
+  <app-footer class="footer"></app-footer>
 </section>

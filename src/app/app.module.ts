@@ -8,8 +8,9 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { NoResultComponent } from './no-result/no-result.component';
 import { ResultsComponent } from './results/results.component';
 
-import { PipeSort } from './pipes/sortPipe.pipe';
+
 import { DataService } from './services/data.service';
+import { FooterComponent } from './footer/footer.component';
 
 let routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -27,7 +28,7 @@ let routes: Routes = [
     MainContainerComponent,
     NoResultComponent,
     ResultsComponent,
-    PipeSort
+    FooterComponent
   ],
   imports: [
     BrowserModule,

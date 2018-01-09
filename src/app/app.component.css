@@ -18,3 +18,10 @@
   max-width: 100%;
   overflow: hidden;
 }
+
+@media screen and (max-width:600px) {
+  .app-container {
+    grid-template: 60px 60px 1fr/ 1fr;
+    grid-template-areas: 'header' 'side-menu' 'main-container';
+  }
+}

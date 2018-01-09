@@ -1,76 +1,137 @@
-  .results {
-    max-width: 100%;
-    height: calc(100vh - 60px);
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+.results * {
+  color: #28313b;
+}
 
-  .results * {
-    color: #28313b;
-  }
+.results {
+  max-width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
 
-  .results h1 {
-    color: #28313b;
+.results h1 {
+  color: #28313b;
+  font-size: 15px;
+  padding: 20px;
+  background: #e7e7e7;
+  border-bottom: 1px solid #a0a0a075;
+}
+
+select.filter {
+  outline: none;
+  border: none;
+  font-size: 15px;
+  padding: 15px 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-bottom: 3px solid dodgerblue;
+  text-align: center;
+}
+
+select.filter>option {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.no-content-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  overflow: hidden;
+  height: 300px;
+}
+
+.no-content-error p {
+  color: #28313b;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+table {
+  text-align: left;
+  font-size: 15px;
+  min-width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #a0a0a075
+}
+
+table tr:first-child:hover {
+  background: white;
+}
+
+table th:hover,
+table tr:hover {
+  background: #e7e7e7;
+}
+
+table td,
+table th {
+  max-width: 200px;
+  white-space: nowrap;
+  padding: 15px 20px;
+  text-overflow: clip;
+  border-bottom: 1px solid #a0a0a075;
+  overflow: hidden;
+  cursor: default;
+}
+
+table th {
+  cursor: pointer;
+}
+
+.pagination {
+  display: block;
+  position: static;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  bottom: 0;
+}
+
+.pagination span {
+  padding: 10px;
+  border: 5px solid rgba(0, 0, 0, 0);
+  display: inline;
+  cursor: pointer;
+}
+
+.pagination span:hover {
+  background: #e7e7e7;
+}
+
+.page-active {
+  background: #28313b;
+}
+
+.active {
+  background: #28313b;
+}
+
+.footer {
+  position: static;
+  bottom: 0;
+}
+
+@media screen and (max-width:600px) {
+  .no-content-error{
     font-size: 15px;
-    padding: 20px;
-    background: #e7e7e7;
-    border: 1px solid #a0a0a075;
   }
-
-  .results h3 {
-    background: white;
-    border-bottom: 1px solid #a0a0a075;
-    padding: 15px 20px;
+  h1{
     font-size: 15px;
   }
-
-  select.filter {
-    outline: none;
-    border: none;
-    font-size: 15px;
-    padding: 15px 20px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-bottom: 3px solid dodgerblue;
-    text-align: center;
+  table tr th,
+  table tr td {
+    font-size: 12px;
+    max-width: 100px;
   }
-
-  select.filter>option {
-    padding: 10px;
-    font-size: 15px;
+  .pagination span {
+    padding: 5px;
+    font-size: 12px;
   }
-
-  table {
-    text-align: left;
-    font-size: 15px;
-    min-width: 100%;
-    border-collapse: collapse;
-    border-top: 1px solid #a0a0a075
-  }
-
-  table tr:first-child:hover {
-    background: white;
-  }
-
-  table th:hover {
-    background: #e7e7e7;
-  }
-
-  table tr:hover {
-    background: #e7e7e7;
-  }
-
-  table td,
-  table th {
-    max-width: 200px;
-    white-space: nowrap;
-    padding: 15px 20px;
-    text-overflow: clip;
-    border-bottom: 1px solid #a0a0a075;
-    overflow: hidden;
-    cursor: default;
-  }
-
-  table th {
-    cursor: pointer;
-  }
+}

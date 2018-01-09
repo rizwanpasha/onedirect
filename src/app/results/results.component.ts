@@ -14,10 +14,18 @@ export class ResultsComponent implements OnInit {
   val = 0;
   option: number = 1;
   all = true;
+
+  showErrorMsg = false;
+  showServerErrorMsg = false;
   countryName = true;
   countryCode = true;
   capital = true;
   language = true;
+
+  fakeArray;
+  pageLength = 0;
+  start = 0;
+  end = 20;
 
   constructor(private dataService: DataService) {
     fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
@@ -31,12 +39,15 @@ export class ResultsComponent implements OnInit {
             "languages": Object.values(data.languages)
           });
         });
+        this.showServerErrorMsg = false;
       })
       .then(() => {
         this.countries = this.original;
+        this.setPageSize(this.countries);
       })
       .catch(() => {
-        console.log("Error");
+        console.error("Server Error, Unable to retrive any data.");
+        this.showServerErrorMsg = true;
       });
   }
   ngOnInit() {
@@ -51,8 +62,19 @@ export class ResultsComponent implements OnInit {
             || pattern.test(item.capital)
             || pattern.test(item.languages);
         });
+        this.setPageSize(this.countries);
+      }
+      if (this.countries.length == 0) {
+        this.showErrorMsg = true;
+      } else {
+        this.showErrorMsg = false;
       }
     });
+  }
+
+  setPageSize(updatedCountries) {
+    this.pageLength = Math.ceil(updatedCountries.length / 20);
+    this.fakeArray = new Array(this.pageLength);
   }
 
   applyFilter(val) {
@@ -63,13 +85,11 @@ export class ResultsComponent implements OnInit {
       this.countryCode = true;
       this.capital = true;
       this.language = true;
-      console.log(this.option);
     } else if (this.option === 2) {
       this.countryName = true;
       this.countryCode = false;
       this.capital = false;
       this.language = false;
-      console.log(this.option);
     } else if (this.option === 3) {
       this.countryName = false;
       this.countryCode = true;
@@ -80,46 +100,16 @@ export class ResultsComponent implements OnInit {
       this.countryCode = false;
       this.capital = true;
       this.language = false;
-      console.log(this.option);
     } else if (this.option === 5) {
       this.countryName = false;
       this.countryCode = false;
       this.capital = false;
       this.language = true;
-      console.log(this.option);
     }
   }
 
-  sort(val) {
-    if (val == 1) {
-      this.sortByCode()
-    } else if (val == 2) {
-      this.sortByName()
-    } else if (val == 3) {
-      this.sortByCapital()
-    }
+  onPage(page_num, event) {
+    this.countries = this.original.slice(page_num * 20 - 20, page_num * 20);
   }
-
-  sortByCode() {
-    // this.countries.sort(function (c1, c2) {
-    //   console.log(c1);
-    //   if (c1.cca2 > c2.cca2) return 1;
-    //   else if (c1.cca2 == c2.cca2) return 0;
-    //   return -1;
-    // });
-  }
-  sortByName() {
-
-    // this.countries.sort(function (c1, c2) {
-    //   if (c1.name.common > c2.name.common) return 1;
-    //   else if (c1.cca2 == c2.cca2) return 0;
-    //   return -1;
-    // });
-  }
-  sortByCapital() {
-
-  }
-
-
 }
 

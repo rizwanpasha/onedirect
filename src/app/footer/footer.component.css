@@ -1,0 +1,55 @@
+footer {
+  color: #28313b;
+  font-size: 15px;
+  padding: 20px;
+  background: #e7e7e7;
+  border: 1px solid #a0a0a075;
+  text-align: center;
+}
+
+footer p {
+  color: #28313b;
+  cursor: pointer;
+}
+
+footer p span {
+  font-size: 20px;
+  color: #28313b;
+}
+
+footer div a,
+footer div p {
+  color: #28313b;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gmail-icon i {
+  color: #db3236;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.github-icon i {
+  color: #333;
+  font-size: 30px;
+  padding: 10px;
+}
+
+@media screen and (max-width:600px) {
+  .gmail-icon i,
+  .github-icon i {
+    font-size: 15px;
+  }
+  footer div a,
+  footer div p {
+   font-size: 15px;
+  }
+}
