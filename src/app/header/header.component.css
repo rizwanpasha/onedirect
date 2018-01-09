@@ -8,10 +8,8 @@
   }
 
   .word-mark {
-    padding: 0 0 10px 20px;
+    padding-left: 20px;
     color: #28313b;
-    text-align: start;
-    align-self: flex-end;
   }
 
   .search {
@@ -40,7 +38,6 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-right: none;
     align-self: center;
-    
   }
 
   .tata-logo {

@@ -1,3 +1,21 @@
+.no-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 p {
-  color: black;
+  color: #28313b;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+}
+
+p:after {
+  content: ' :(';
+  position: absolute;
+  font-size: 60px;
+  top: -20px;
+  right: -50px;
 }

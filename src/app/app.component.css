@@ -1,5 +1,4 @@
 .app-container {
-  max-width: 1024px;
   margin: 0 auto;
   display: grid;
   grid-template: 60px 1fr/ 60px 1fr;
@@ -14,6 +13,8 @@
   grid-area: side-menu;
 }
 
-.main-container{
-    grid-area: main-container;
+.main-container {
+  grid-area: main-container;
+  max-width: 100%;
+  overflow: hidden;
 }

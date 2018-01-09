@@ -1,3 +1,30 @@
 <section class="results">
   <h1>List Of Countries</h1>
+  <select class="filter" (change)='applyFilter($event)'>
+    <option value="1">All</option>
+    <option value="2">Country Name</option>
+    <option value="3">Country Code</option>
+    <option value="4">Capital</option>
+    <option value="5">Languages</option>
+  </select>
+  <div class="list-container">
+    <table>
+      <tr class="table-header">
+        <th *ngIf="countryCode" (click)='sort(1)'>Country Code</th>
+        <th *ngIf="countryName" (click)='sort(2)'>Country Name</th>
+        <th *ngIf="capital" (click)='sort(3)'>Capital</th>
+        <th *ngIf="language">Languages</th>
+      </tr>
+      <tr *ngFor='let data of original '>
+        <td *ngIf="countryCode">{{data.code}}</td>
+        <td *ngIf="countryName">{{data.name}}</td>
+        <td *ngIf="capital">{{data.capital}}</td>
+        <td *ngIf="language">
+          <span *ngFor="let lang of data.languages ">
+            {{lang}},
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
 </section>

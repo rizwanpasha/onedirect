@@ -9,9 +9,9 @@ import { NoResultComponent } from './no-result/no-result.component';
 import { ResultsComponent } from './results/results.component';
 
 let routes: Routes = [
-  { path: '', component: ResultsComponent, pathMatch: 'full' },
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: ResultsComponent },
-  { path: 'wordmark', component: ResultsComponent },
+  { path: 'lettermark', redirectTo: '/home' },
   { path: '**', component: NoResultComponent },
 
 ];
