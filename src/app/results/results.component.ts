@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { serializePath } from '@angular/router/src/url_tree';
 
 @Component({
   selector: 'app-results',
@@ -17,12 +19,12 @@ export class ResultsComponent implements OnInit {
   capital = true;
   language = true;
 
-  constructor() {
+  constructor(private dataService: DataService) {
     fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
       .then(result => result.json())
       .then(json => {
         json.forEach((data) => {
-          this.countries.push({
+          this.original.push({
             "code": data.cca2,
             "name": data.name.common,
             "capital": data.capital,
@@ -31,16 +33,27 @@ export class ResultsComponent implements OnInit {
         });
       })
       .then(() => {
-        this.original = this.countries;
-      }).catch(() => {
+        this.countries = this.original;
+      })
+      .catch(() => {
         console.log("Error");
       });
   }
   ngOnInit() {
-
+    this.dataService.search.subscribe((search_key) => {
+      if (search_key == '') {
+        this.countries = this.original;
+      } else {
+        var pattern = new RegExp(search_key, 'ig');
+        this.countries = this.original.filter((item) => {
+          return pattern.test(item.code)
+            || pattern.test(item.name)
+            || pattern.test(item.capital)
+            || pattern.test(item.languages);
+        });
+      }
+    });
   }
-
-
 
   applyFilter(val) {
     this.option = val.target.value;

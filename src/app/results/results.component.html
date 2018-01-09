@@ -15,9 +15,9 @@
         <th *ngIf="capital" (click)='sort(3)'>Capital</th>
         <th *ngIf="language">Languages</th>
       </tr>
-      <tr *ngFor='let data of original '>
+      <tr *ngFor='let data of countries'>
         <td *ngIf="countryCode">{{data.code}}</td>
-        <td *ngIf="countryName">{{data.name}}</td>
+        <td *ngIf="countryName">{{data.name }}</td>
         <td *ngIf="capital">{{data.capital}}</td>
         <td *ngIf="language">
           <span *ngFor="let lang of data.languages ">
