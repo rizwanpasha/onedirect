@@ -6,10 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  countries = [];
+  count = 1;
+  constructor() {
+    fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
+      .then(result => result.json())
+      .then(json => {
+        json.forEach((data) => {
+          this.countries.push({
+            "code": data.cca2,
+            "name": data.name.common,
+            "capital": data.capital,
+            "languages": Object.values(data.languages)
+          });
+        });
+      })
+      .then(() => {
+        console.log(this.countries);
+      }).catch(() => {
+        console.log("Error");
+      });
   }
+  ngOnInit() {
 
+  }
 }
+

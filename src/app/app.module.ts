@@ -11,7 +11,9 @@ import { ResultsComponent } from './results/results.component';
 let routes: Routes = [
   { path: '', component: ResultsComponent, pathMatch: 'full' },
   { path: 'home', component: ResultsComponent },
-  { path: 'no-result', component: NoResultComponent }
+  { path: 'wordmark', component: ResultsComponent },
+  { path: '**', component: NoResultComponent },
+
 ];
 
 @NgModule({

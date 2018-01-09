@@ -34,47 +34,71 @@ a:last-child {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.home>i {
-  color: tomato;
-}
 
-.home:hover {
-  border-left: 3px solid tomato;
-  background-color: #2e3740;
+/* .home>i {
+  color: tomato;
 }
 
 .inbox>i {
   color: orange;
 }
 
-.inbox:hover {
-  border-left: 3px solid orange;
-  background-color: #2e3740;
-}
-
 .stats>i {
   color: dodgerblue;
-}
-
-.stats:hover {
-  border-left: 3px solid dodgerblue;
-  background-color: #2e3740;
 }
 
 .menu>i {
   color: slateblue;
 }
 
-.menu:hover {
-  border-left: 3px solid slateblue;
-  background-color: #2e3740;
-}
-
 .setting>i {
   color: mediumaquamarine;
+} */
+
+.setting:hover,
+.menu:hover,
+.stats:hover,
+.inbox:hover,
+.home:hover {
+  background-color: #2e3740;
 }
 
-.setting:hover {
+.active.home {
+  border-left: 3px solid tomato;
+}
+
+.active.home>i {
+  color: tomato;
+}
+
+.active.inbox {
+  border-left: 3px solid orange;
+}
+
+.active.inbox>i {
+  color: orange;
+}
+
+.active.stats {
+  border-left: 3px solid dodgerblue;
+}
+
+.active.stats>i {
+  color: dodgerblue;
+}
+
+.active.menu {
+  border-left: 3px solid slateblue;
+}
+
+.active.menu>i {
+  color: slateblue;
+}
+
+.active.setting {
   border-left: 3px solid mediumaquamarine;
-  background-color: #2e3740;
+}
+
+.active.setting>i {
+  color: mediumaquamarine;
 }
