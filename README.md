@@ -7,13 +7,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Steps for execution 
 
 ## On local machine
- i) Clone the repository from the following location https://github.com/rizwanpasha/onedirect.git.
+ i) Clone the repository from the following location www.github.com/rizwanpasha/onedirect.git.
+
  ii)  CD in to the directory and install necessary packages by running npm install command. 
+
  iii) Start localserver by running ng serve.
+ 
  iv) open your browser and visit localhost:4200.
 
  ## Live demo
- visit https://www.rizwanpasha.github.io/onedirect for live demo
+ visit www.rizwanpasha.github.io/onedirect for live demo
 
  ## Contact 
  contact me at rizwanpasha793@gmail.com

@@ -23,5 +23,6 @@
   .app-container {
     grid-template: 60px 60px 1fr/ 1fr;
     grid-template-areas: 'header' 'side-menu' 'main-container';
+    width: 100vw;
   }
 }

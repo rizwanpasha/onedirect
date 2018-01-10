@@ -92,8 +92,8 @@ a:last-child {
     line-height: 60px;
     height: 60px;
   }
-  a> i{
-    padding:5px;
+  .side-menu a i {
+    padding: 3px;
   }
   .side-menu {
     height: 60px;

@@ -2,7 +2,7 @@
   <h1 class="word-mark">Countries</h1>
   <div class="right-container">
     <i class="fa fa-search" aria-hidden="true"></i>
-    <input class="search" type="search" placeholder="Search Countries" (keyup)="onSearch($event)" (change)="onSearch($event)">
+    <input class="search" type="search" placeholder="Search Countries" (keyup)="onSearch($event)" (keydown.enter)="onSearch($event)" >
     <i class="fa fa-th" aria-hidden="true"></i>
     <span class="tata-logo"></span>
   </div>

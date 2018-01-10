@@ -52,8 +52,9 @@ export class ResultsComponent implements OnInit {
   }
   ngOnInit() {
     this.dataService.search.subscribe((search_key) => {
-      if (search_key == '') {
+      if (search_key.length == 0) {
         this.countries = this.original;
+        this.setPageSize(this.countries);
       } else {
         var pattern = new RegExp(search_key, 'ig');
         this.countries = this.original.filter((item) => {
