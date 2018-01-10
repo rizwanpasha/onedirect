@@ -112,5 +112,30 @@ export class ResultsComponent implements OnInit {
   onPage(page_num, event) {
     this.countries = this.original.slice(page_num * 20 - 20, page_num * 20);
   }
+
+
+  sort(type: number) {
+    if (type == 1) {
+      this.sortByCode();
+    } else {
+      this.sortByName();
+    }
+  }
+
+  sortByCode() {
+    this.countries.sort((a, b) => {
+      if (a.code.toUpperCase() > b.code.toUpperCase()) return 1;
+      else if (a.code.toUpperCase() == b.code.toUpperCase()) return 0;
+      return -1;
+    });
+  }
+
+  sortByName() {
+    this.countries.sort((a, b) => {
+      if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
+      else if (a.name.toUpperCase() == b.name.toUpperCase()) return 0;
+      return -1;
+    });
+  }
 }
 

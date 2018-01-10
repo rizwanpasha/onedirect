@@ -10,8 +10,8 @@
   <div class="list-container">
     <table>
       <tr class="table-header">
-        <th *ngIf="countryCode">Country Code</th>
-        <th *ngIf="countryName">Country Name</th>
+        <th *ngIf="countryCode" (click)='sort(1)'>Country Code</th>
+        <th *ngIf="countryName" (click)='sort(2)'>Country Name</th>
         <th *ngIf="capital">Capital</th>
         <th *ngIf="language">Languages</th>
       </tr>
