@@ -1,3 +1,5 @@
+/* standerd styles added for footer which wasn't the part of prototype */
+
 footer {
   color: #28313b;
   font-size: 15px;
@@ -43,13 +45,16 @@ footer div {
   padding: 10px;
 }
 
-@media screen and (max-width:600px) {
+
+  /* styles for devices below 700px */
+
+@media screen and (max-width:700px) {
   .gmail-icon i,
   .github-icon i {
     font-size: 15px;
   }
   footer div a,
   footer div p {
-   font-size: 15px;
+    font-size: 15px;
   }
 }

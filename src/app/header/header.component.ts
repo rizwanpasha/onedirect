@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  // handle search event by sending search key to service 
+
   onSearch(event) {
     this.dataService.search.next(event.target.value);
   }
