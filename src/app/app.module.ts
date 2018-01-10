@@ -13,11 +13,10 @@ import { DataService } from './services/data.service';
 import { FooterComponent } from './footer/footer.component';
 
 let routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/home' },
+  { path: '', component: ResultsComponent, pathMatch: 'full' },
   { path: 'home', component: ResultsComponent },
   { path: 'lettermark', redirectTo: '/home' },
   { path: '**', component: NoResultComponent },
-
 ];
 
 @NgModule({
@@ -32,7 +31,7 @@ let routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [
     DataService
