@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### On local machine
 
- 1. Clone the repository from the following location www.github.com/rizwanpasha/onedirect.git.
+ 1. Clone the repository from the following location https://github.com/rizwanpasha/onedirect.git.
 
  2. CD in to the directory and install necessary packages by running `npm install` command. 
 
