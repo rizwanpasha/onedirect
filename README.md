@@ -14,7 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
      1. Clone the repository from the following location https://github.com/rizwanpasha/onedirect.git.
      
-     2. CD in to the directory and install necessary packages by running `npm install` command. 
+     2. CD in to the directory and install necessary packages by running `npm install` command. 
 
      3. Start localserver by running `ng serve`.
  
