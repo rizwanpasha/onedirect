@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Live demo
 
- visit www.rizwanpasha.github.io/onedirect for live demo.
+ visit https://rizwanpasha.github.io/onedirect for live demo.
 
 ### On local machine
 
