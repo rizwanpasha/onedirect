@@ -6,11 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Steps for execution 
 
-### Live demo
+- ### Live demo
 
  visit https://rizwanpasha.github.io/onedirect for live demo.
 
-### On local machine
+- ### On local machine
 
  1. Clone the repository from the following location https://github.com/rizwanpasha/onedirect.git.
 
