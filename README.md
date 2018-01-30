@@ -1,8 +1,8 @@
 # Onedirect
 
-Application development as part of interview for Onedirect.
+   Application development as part of interview for Onedirect.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+   This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
 ## Steps for execution 
 
