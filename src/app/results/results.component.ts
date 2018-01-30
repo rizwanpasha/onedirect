@@ -107,38 +107,29 @@ export class ResultsComponent implements OnInit {
     this.option = val.target.value;
     this.option = Number(this.option);
 
-
     if (this.option === 1) {
       // if option 1, then show all columns
-      this.countryName = true;
-      this.countryCode = true;
-      this.capital = true;
-      this.language = true;
+      this.toggleColumns(true, true, true, true);
     } else if (this.option === 2) {
       // if optionr 2, then show country name column and hide other columns
-      this.countryName = true;
-      this.countryCode = false;
-      this.capital = false;
-      this.language = false;
+      this.toggleColumns(true, false, false, false);
     } else if (this.option === 3) {
       // if option 3, then show country codee column and hide other columns
-      this.countryName = false;
-      this.countryCode = true;
-      this.capital = false;
-      this.language = false;
+      this.toggleColumns(false, true, false, false);
     } else if (this.option === 4) {
       // if option 4, then show capital column and hide other columns
-      this.countryName = false;
-      this.countryCode = false;
-      this.capital = true;
-      this.language = false;
+      this.toggleColumns(false, false, true, false);
     } else if (this.option === 5) {
       // if option 2, then show languages column and hide other columns
-      this.countryName = false;
-      this.countryCode = false;
-      this.capital = false;
-      this.language = true;
+      this.toggleColumns(false, false, false, true);
     }
+  }
+
+  toggleColumns(countryName, countryCode, capital, language) {
+    this.countryName = countryName;
+    this.countryCode = countryCode;
+    this.capital = capital;
+    this.language = language;
   }
 
   // shows which items to show on each page, ie 20 items per page
@@ -166,6 +157,7 @@ export class ResultsComponent implements OnInit {
     });
   }
 
+
   sortByName() {
     this.countries.sort((a, b) => {
       if (a.name.toUpperCase() > b.name.toUpperCase()) return 1;
@@ -176,8 +168,8 @@ export class ResultsComponent implements OnInit {
 
   sortByCapital() {
     this.countries.sort((a, b) => {
-      if (a.capital.toUpperCase() > b.capital.toUpperCase()) return 1;
-      else if (a.capital.toUpperCase() == b.capital.toUpperCase()) return 0;
+      if (a.capital[0].toUpperCase() > b.capital[0].toUpperCase()) return 1;
+      else if (a.capital[0].toUpperCase() == b.capital[0].toUpperCase()) return 0;
       return -1;
     });
   }

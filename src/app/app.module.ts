@@ -13,7 +13,7 @@ import { DataService } from './services/data.service';
 import { FooterComponent } from './footer/footer.component';
 
 let routes: Routes = [
-  { path: '', component: ResultsComponent, pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ResultsComponent },
   { path: 'lettermark', redirectTo: '/home' },
   { path: '**', component: NoResultComponent },
