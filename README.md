@@ -1,6 +1,6 @@
 # Onedirect
 
-   Application development as part of interview for Onedirect.
+   Application developed as part of interview for Onedirect.
 
    [Click on this link for a working demo](https://rizwanpasha.github.io/onedirect)
 
@@ -20,6 +20,4 @@
  
      4. open your browser and visit `localhost:4200`.  
 
- ## Contact 
 
- contact me at rizwanpasha793@gmail.com
