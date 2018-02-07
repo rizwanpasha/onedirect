@@ -2,7 +2,7 @@
 
    Application development as part of interview for Onedirect.
 
-   This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+   [Click on this link for a working demo](https://rizwanpasha.github.io/onedirect)
 
 ## Steps for execution 
 
