@@ -36,7 +36,7 @@ export class ResultsComponent implements OnInit {
 
   constructor(private dataService: DataService) {
     // fetch API used to get country data from external server
-    fetch('https://raw.githubusercontent.com/mledoze/countries/master/countries.json')
+    fetch('https://raw.githubusercontent.com/rizwanpasha/country-details/master/countries.json')
       .then(result => result.json())
       .then(json => {
         json.forEach((data) => {
@@ -168,8 +168,8 @@ export class ResultsComponent implements OnInit {
 
   sortByCapital() {
     this.countries.sort((a, b) => {
-      if (a.capital[0].toUpperCase() > b.capital[0].toUpperCase()) return 1;
-      else if (a.capital[0].toUpperCase() == b.capital[0].toUpperCase()) return 0;
+      if (a.capital.toUpperCase() > b.capital.toUpperCase()) return 1;
+      else if (a.capital.toUpperCase() == b.capital.toUpperCase()) return 0;
       return -1;
     });
   }
